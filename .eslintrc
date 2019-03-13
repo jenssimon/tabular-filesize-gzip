@@ -1,6 +1,6 @@
 {
   "root": true,
   "extends": [
-    "./index.js"
+    "@jenssimon/base"
   ]
 }
