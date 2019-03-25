@@ -2,6 +2,7 @@ const fs = require('fs');
 const glob = require('glob');
 const { table, getBorderCharacters } = require('table');
 const gzipSize = require('gzip-size');
+const filesize = require('filesize');
 const chalk = require('chalk');
 
 const emptyLine = [' ', ' ', ' '];
@@ -16,22 +17,30 @@ const tableOptions = {
   drawHorizontalLine: () => false,
 };
 
-const getFileSizeKb = size => (size / 1024).toLocaleString(undefined, {
-  minimumFractionDigits: 2,
-  maximumFractionDigits: 2,
-});
+const filesizeOptions = { standard: 'iec' };
+
+const formatSize = (size, color, padEnd = 3, padDecimal = 3) => {
+  const match = /^(([0-9,]*)(.[0-9]*)?) (\S*)$/.exec(size);
+  let res = size;
+  if (match) {
+    res = `${chalk[color](
+      `${match[2]}${(match[3] || '').padEnd(padDecimal)}`.padStart(12),
+    )} ${match[4].padEnd(padEnd)}`;
+  }
+  return res;
+};
 
 const fileSizeEntry = (f) => {
   const stats = fs.statSync(f);
   const size = stats.size.toLocaleString();
   const gzipFileSizePlain = gzipSize.sync(fs.readFileSync(f, 'UTF-8'));
   const gzipFileSize = gzipFileSizePlain.toLocaleString();
-  const sizeKb = getFileSizeKb(stats.size);
-  const gzipFileSizeKb = getFileSizeKb(gzipFileSizePlain);
+  const sizeKb = filesize(stats.size, filesizeOptions);
+  const gzipFileSizeKb = filesize(gzipFileSizePlain, filesizeOptions);
   return [
     `${f}:`,
-    `${chalk.green(sizeKb.padStart(8))} kB (${chalk.green(size.padStart(8))} bytes)`,
-    `Gzip ${chalk.yellow(gzipFileSizeKb.padStart(8))} kB (${chalk.yellow(gzipFileSize.padStart(8))} bytes)`,
+    `${formatSize(sizeKb, 'green')} (${formatSize(`${size} B`, 'green', 1, 0)})`,
+    `Gzip ${formatSize(gzipFileSizeKb, 'yellow')} (${formatSize(`${gzipFileSize} B`, 'yellow', 1, 0)})`,
   ];
 };
 
