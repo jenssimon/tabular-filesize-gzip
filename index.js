@@ -6,7 +6,7 @@ const filesize = require('filesize');
 const chalk = require('chalk');
 
 const emptyLine = [' ', ' ', ' '];
-const headline = title => [title, ' ', ' '];
+const headline = (title) => [title, ' ', ' '];
 
 const tableOptions = {
   border: getBorderCharacters('void'),
