@@ -20,7 +20,7 @@ const tableOptions = {
 const filesizeOptions = { standard: 'iec' };
 
 const formatSize = (size, color, padEnd = 3, padDecimal = 3) => {
-  const match = /^(([0-9,]*)(.[0-9]*)?) (\S*)$/.exec(size);
+  const match = /^(([\d,]*)(.\d*)?) (\S*)$/.exec(size);
   let res = size;
   if (match) {
     res = `${chalk[color](
