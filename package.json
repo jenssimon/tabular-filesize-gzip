@@ -1,6 +1,6 @@
 {
   "name": "tabular-filesize-gzip",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Show file sizes tabular including Gzip sizes",
   "main": "index.js",
   "repository": {
