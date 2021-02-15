@@ -47,7 +47,7 @@ console.log(tabularFilesizeGzip([
 
 ## License
 
-MIT © 2020 [Jens Simon](https://github.com/jenssimon)
+MIT © 2021 [Jens Simon](https://github.com/jenssimon)
 
 [npm-url]: https://www.npmjs.com/package/tabular-filesize-gzip
 [npm-image]: https://badgen.net/npm/v/tabular-filesize-gzip
