@@ -1,12 +1,25 @@
-const fs = require('fs');
-const glob = require('glob');
-const { table, getBorderCharacters } = require('table');
-const gzipSize = require('gzip-size');
-const filesize = require('filesize');
-const chalk = require('chalk');
+import fs from 'fs';
+import glob from 'glob';
+import { table, getBorderCharacters } from 'table';
+import gzipSize from 'gzip-size';
+import filesize from 'filesize';
+import chalk, { Chalk } from 'chalk';
 
-const emptyLine = [' ', ' ', ' '];
-const headline = (title) => [title, ' ', ' '];
+type LineType = [string, string, string];
+
+export interface FilesizeGroup {
+  title: string;
+  files: string;
+  ignore?: string[];
+}
+
+export interface FilesizeSection {
+  title: string;
+  groups: FilesizeGroup[];
+}
+
+const emptyLine: LineType = [' ', ' ', ' '];
+const headline = (title: string): LineType => [title, ' ', ' '];
 
 const tableOptions = {
   border: getBorderCharacters('void'),
@@ -17,23 +30,23 @@ const tableOptions = {
   drawHorizontalLine: () => false,
 };
 
-const filesizeOptions = { standard: 'iec' };
+const filesizeOptions = { standard: 'iec' as ('iec' | 'jedec') };
 
-const formatSize = (size, color, padEnd = 3, padDecimal = 3) => {
+const formatSize = (size: string, color: keyof Chalk, padEnd = 3, padDecimal = 3) => {
   const match = /^(([\d,]*)(.\d*)?) (\S*)$/.exec(size);
   let res = size;
   if (match) {
-    res = `${chalk[color](
+    res = `${chalk.keyword(color)(
       `${match[2]}${(match[3] || '').padEnd(padDecimal)}`.padStart(12),
     )} ${match[4].padEnd(padEnd)}`;
   }
   return res;
 };
 
-const fileSizeEntry = (f) => {
+const fileSizeEntry = (f: string): LineType => {
   const stats = fs.statSync(f);
   const size = stats.size.toLocaleString();
-  const gzipFileSizePlain = gzipSize.sync(fs.readFileSync(f, 'UTF-8'));
+  const gzipFileSizePlain = gzipSize.sync(fs.readFileSync(f, 'utf-8'));
   const gzipFileSize = gzipFileSizePlain.toLocaleString();
   const sizeKb = filesize(stats.size, filesizeOptions);
   const gzipFileSizeKb = filesize(gzipFileSizePlain, filesizeOptions);
@@ -44,8 +57,8 @@ const fileSizeEntry = (f) => {
   ];
 };
 
-module.exports = (sections) => {
-  const data = [];
+export default (sections: FilesizeSection[]): string => {
+  const data: LineType[] = [];
   sections.forEach(({ title, groups }) => {
     data.push(headline(chalk.bold.underline.yellow(title)));
     data.push(emptyLine);
@@ -53,7 +66,7 @@ module.exports = (sections) => {
       data.push(headline(chalk.bold.underline.whiteBright(groupTitle)));
       glob.sync(files, {
         ignore: [
-          ...ignore || [],
+          ...ignore ?? [],
         ],
       }).forEach((f) => {
         data.push(fileSizeEntry(f));
