@@ -7,13 +7,13 @@ import chalk, { Chalk } from 'chalk';
 
 type LineType = [string, string, string];
 
-export interface FilesizeGroup {
+interface FilesizeGroup {
   title: string;
   files: string;
   ignore?: string[];
 }
 
-export interface FilesizeSection {
+interface FilesizeSection {
   title: string;
   groups: FilesizeGroup[];
 }
@@ -57,7 +57,7 @@ const fileSizeEntry = (f: string): LineType => {
   ];
 };
 
-export default (sections: FilesizeSection[]): string => {
+const tabularFilesizeGZIP = (sections: FilesizeSection[]): string => {
   const data: LineType[] = [];
   sections.forEach(({ title, groups }) => {
     data.push(headline(chalk.bold.underline.yellow(title)));
@@ -76,3 +76,5 @@ export default (sections: FilesizeSection[]): string => {
   });
   return table(data, tableOptions);
 };
+
+export = tabularFilesizeGZIP;

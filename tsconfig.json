@@ -3,7 +3,7 @@
     "declaration": true,
     "target": "es5",
     "outDir": "dist",
-    "module": "commonjs",
+    "module": "CommonJS",
     "moduleResolution": "node",
     "sourceMap": true,
     "strict": true,
