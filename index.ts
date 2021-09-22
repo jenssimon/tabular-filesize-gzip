@@ -37,6 +37,7 @@ const formatSize = (size: string, color: keyof Chalk, padEnd = 3, padDecimal = 3
   let res = size;
   if (match) {
     res = `${chalk.keyword(color)(
+      // eslint-disable-next-line sonarjs/no-nested-template-literals
       `${match[2]}${(match[3] || '').padEnd(padDecimal)}`.padStart(12),
     )} ${match[4].padEnd(padEnd)}`;
   }
@@ -52,7 +53,9 @@ const fileSizeEntry = (f: string): LineType => {
   const gzipFileSizeKb = filesize(gzipFileSizePlain, filesizeOptions);
   return [
     `${f}:`,
+    // eslint-disable-next-line sonarjs/no-nested-template-literals
     `${formatSize(sizeKb, 'green')} (${formatSize(`${size} B`, 'green', 1, 0)})`,
+    // eslint-disable-next-line sonarjs/no-nested-template-literals
     `Gzip ${formatSize(gzipFileSizeKb, 'yellow')} (${formatSize(`${gzipFileSize} B`, 'yellow', 1, 0)})`,
   ];
 };
