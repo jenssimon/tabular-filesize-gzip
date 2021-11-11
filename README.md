@@ -1,4 +1,4 @@
-[![NPM version][npm-image]][npm-url] [![Downloads][npm-downloads-image]][npm-url] [![Dependencies][deps-image]][deps-url] [![star this repo][gh-stars-image]][gh-url] [![fork this repo][gh-forks-image]][gh-url] [![Build Status][travis-image]][travis-url] ![Code Style][codestyle-image]
+[![NPM version][npm-image]][npm-url] [![Downloads][npm-downloads-image]][npm-url] [![star this repo][gh-stars-image]][gh-url] [![fork this repo][gh-forks-image]][gh-url] [![Build Status][travis-image]][travis-url] ![Code Style][codestyle-image]
 
 # tabular-filesize-gzip
 
@@ -52,9 +52,6 @@ MIT © 2021 [Jens Simon](https://github.com/jenssimon)
 [npm-url]: https://www.npmjs.com/package/tabular-filesize-gzip
 [npm-image]: https://badgen.net/npm/v/tabular-filesize-gzip
 [npm-downloads-image]: https://badgen.net/npm/dt/tabular-filesize-gzip
-
-[deps-url]: https://david-dm.org/jenssimon/tabular-filesize-gzip
-[deps-image]: https://badgen.net/david/dep/jenssimon/tabular-filesize-gzip
 
 [gh-url]: https://github.com/jenssimon/tabular-filesize-gzip
 [gh-stars-image]: https://badgen.net/github/stars/jenssimon/tabular-filesize-gzip
