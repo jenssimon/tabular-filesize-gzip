@@ -13,7 +13,6 @@
   },
   "author": "Jens Simon <jens.simon80@googlemail.com>",
   "license": "MIT",
-  "private": false,
   "scripts": {
     "lint": "eslint --fix ./",
     "build": "tsc",
@@ -50,5 +49,6 @@
     "parserOptions": {
       "project": "./tsconfig.json"
     }
-  }
+  },
+  "packageManager": "yarn@3.1.1"
 }
