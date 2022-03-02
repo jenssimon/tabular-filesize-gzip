@@ -2351,7 +2351,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"npm-run-all@npm:4.1.5":
+"npm-run-all@npm:^4.1.5":
   version: 4.1.5
   resolution: "npm-run-all@npm:4.1.5"
   dependencies:
@@ -3041,7 +3041,7 @@ __metadata:
     filesize: ^8.0.7
     glob: ^7.2.0
     gzip-size: ^6.0.0
-    npm-run-all: 4.1.5
+    npm-run-all: ^4.1.5
     table: ^6.8.0
     typescript: 4.6.2
   languageName: unknown

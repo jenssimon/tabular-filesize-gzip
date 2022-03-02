@@ -16,7 +16,10 @@
   "scripts": {
     "lint": "eslint --fix ./",
     "build": "tsc",
-    "prepare": "npm-run-all build"
+    "prepare": "npm-run-all build",
+    "ci": "run-s \"ci:*\"",
+    "ci:lint": "eslint --ext .tsx,.ts,.jsx,.js ./",
+    "ci:tsc": "tsc --noEmit"
   },
   "keywords": [
     "file",
