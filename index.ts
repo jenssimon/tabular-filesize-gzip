@@ -3,7 +3,8 @@ import glob from 'glob';
 import { table, getBorderCharacters } from 'table';
 import gzipSize from 'gzip-size';
 import filesize from 'filesize';
-import chalk, { Chalk } from 'chalk';
+import type { Chalk } from 'chalk';
+import chalk from 'chalk';
 
 type LineType = [string, string, string];
 
@@ -37,7 +38,7 @@ const formatSize = (size: string, color: keyof Chalk, padEnd = 3, padDecimal = 3
   let res = size;
   if (match) {
     res = `${chalk.keyword(color)(
-      // eslint-disable-next-line sonarjs/no-nested-template-literals
+
       `${match[2]}${(match[3] || '').padEnd(padDecimal)}`.padStart(12),
     )} ${match[4].padEnd(padEnd)}`;
   }
