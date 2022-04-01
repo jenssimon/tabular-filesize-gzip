@@ -1,10 +1,13 @@
 import fs from 'fs';
+
 import glob from 'glob';
 import { table, getBorderCharacters } from 'table';
 import gzipSize from 'gzip-size';
 import filesize from 'filesize';
-import type { Chalk } from 'chalk';
+
 import chalk from 'chalk';
+
+import type { Chalk } from 'chalk';
 
 type LineType = [string, string, string];
 
