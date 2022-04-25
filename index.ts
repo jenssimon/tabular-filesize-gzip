@@ -2,7 +2,7 @@ import fs from 'fs';
 
 import glob from 'glob';
 import { table, getBorderCharacters } from 'table';
-import gzipSize from 'gzip-size';
+import { gzipSizeSync } from 'gzip-size';
 import filesize from 'filesize';
 import chalk from 'chalk';
 
@@ -50,7 +50,7 @@ const formatSize = (size: string, color: ChalkInstance, padEnd = 3, padDecimal =
 const fileSizeEntry = (f: string): LineType => {
   const stats = fs.statSync(f);
   const size = stats.size.toLocaleString();
-  const gzipFileSizePlain = gzipSize.sync(fs.readFileSync(f, 'utf-8'));
+  const gzipFileSizePlain = gzipSizeSync(fs.readFileSync(f, 'utf-8'));
   const gzipFileSize = gzipFileSizePlain.toLocaleString();
   const sizeKb = filesize(stats.size, filesizeOptions);
   const gzipFileSizeKb = filesize(gzipFileSizePlain, filesizeOptions);
