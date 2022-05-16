@@ -17,9 +17,9 @@
     "lint": "eslint --fix ./",
     "build": "tsc",
     "prepare": "npm-run-all build",
-    "ci": "run-s \"ci:*\"",
-    "ci:lint": "eslint --ext .tsx,.ts,.jsx,.js ./",
-    "ci:tsc": "tsc --noEmit"
+    "ci-test": "run-s \"ci-test:*\"",
+    "ci-test:lint": "eslint --ext .tsx,.ts,.jsx,.js ./",
+    "ci-test:tsc": "tsc --noEmit"
   },
   "keywords": [
     "file",
