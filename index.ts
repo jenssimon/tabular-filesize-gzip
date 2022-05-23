@@ -2,11 +2,12 @@ import fs from 'fs';
 
 import glob from 'glob';
 import { table, getBorderCharacters } from 'table';
-import gzipSize from 'gzip-size'; // TODO need to deal with ESM
+import gzipSize from 'gzip-size';
 import filesize from 'filesize';
+
 import chalk from 'chalk';
 
-import type { ChalkInstance } from 'chalk';
+import type { Chalk } from 'chalk';
 
 type LineType = [string, string, string];
 
@@ -35,11 +36,11 @@ const tableOptions = {
 
 const filesizeOptions = { standard: 'iec' as ('iec' | 'jedec') };
 
-const formatSize = (size: string, color: ChalkInstance, padEnd = 3, padDecimal = 3) => {
+const formatSize = (size: string, color: keyof Chalk, padEnd = 3, padDecimal = 3) => {
   const match = /^(([\d,]*)(.\d*)?) (\S*)$/.exec(size);
   let res = size;
   if (match) {
-    res = `${color(
+    res = `${chalk.keyword(color)(
 
       `${match[2]}${(match[3] || '').padEnd(padDecimal)}`.padStart(12),
     )} ${match[4].padEnd(padEnd)}`;
@@ -57,9 +58,9 @@ const fileSizeEntry = (f: string): LineType => {
   return [
     `${f}:`,
     // eslint-disable-next-line sonarjs/no-nested-template-literals
-    `${formatSize(sizeKb, chalk.green)} (${formatSize(`${size} B`, chalk.green, 1, 0)})`,
+    `${formatSize(sizeKb, 'green')} (${formatSize(`${size} B`, 'green', 1, 0)})`,
     // eslint-disable-next-line sonarjs/no-nested-template-literals
-    `Gzip ${formatSize(gzipFileSizeKb, chalk.yellow)} (${formatSize(`${gzipFileSize} B`, chalk.yellow, 1, 0)})`,
+    `Gzip ${formatSize(gzipFileSizeKb, 'yellow')} (${formatSize(`${gzipFileSize} B`, 'yellow', 1, 0)})`,
   ];
 };
 
