@@ -2,7 +2,7 @@ import fs from 'fs';
 
 import glob from 'glob';
 import { table, getBorderCharacters } from 'table';
-import gzipSize from 'gzip-size';
+import gzipSize from 'gzip-size'; // TODO need to deal with ESM
 import filesize from 'filesize';
 import chalk from 'chalk';
 
