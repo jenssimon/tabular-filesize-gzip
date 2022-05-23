@@ -34,9 +34,9 @@
     "table"
   ],
   "dependencies": {
-    "chalk": "^5.0.0",
+    "chalk": "^5.0.1",
     "filesize": "^8.0.7",
-    "glob": "^8.0.0",
+    "glob": "^8.0.3",
     "gzip-size": "^7.0.0",
     "table": "^6.8.0"
   },
@@ -46,7 +46,7 @@
     "@jenssimon/eslint-config-base": "5.4.1",
     "@jenssimon/eslint-config-typescript": "3.4.2",
     "@types/glob": "7.2.0",
-    "@types/node": "17.0.23",
+    "@types/node": "17.0.35",
     "commitizen": "4.2.4",
     "cz-conventional-changelog": "3.3.0",
     "eslint": "8.16.0",
