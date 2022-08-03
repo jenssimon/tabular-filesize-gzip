@@ -7,6 +7,7 @@ import filesize from 'filesize';
 
 import chalk from 'chalk';
 
+// eslint-disable-next-line unicorn/import-style
 import type { Chalk } from 'chalk';
 
 type LineType = [string, string, string];
@@ -51,6 +52,7 @@ const formatSize = (size: string, color: keyof Chalk, padEnd = 3, padDecimal = 3
 const fileSizeEntry = (f: string): LineType => {
   const stats = fs.statSync(f);
   const size = stats.size.toLocaleString();
+  // eslint-disable-next-line unicorn/text-encoding-identifier-case
   const gzipFileSizePlain = gzipSize.sync(fs.readFileSync(f, 'utf-8'));
   const gzipFileSize = gzipFileSizePlain.toLocaleString();
   const sizeKb = filesize(stats.size, filesizeOptions);
@@ -67,8 +69,7 @@ const fileSizeEntry = (f: string): LineType => {
 const tabularFilesizeGZIP = (sections: FilesizeSection[]): string => {
   const data: LineType[] = [];
   sections.forEach(({ title, groups }) => {
-    data.push(headline(chalk.bold.underline.yellow(title)));
-    data.push(emptyLine);
+    data.push(headline(chalk.bold.underline.yellow(title)), emptyLine);
     groups.forEach(({ title: groupTitle, files, ignore }) => {
       data.push(headline(chalk.bold.underline.whiteBright(groupTitle)));
       glob.sync(files, {
