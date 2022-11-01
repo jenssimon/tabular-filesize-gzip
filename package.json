@@ -46,7 +46,7 @@
     "@jenssimon/eslint-config-base": "6.4.3",
     "@jenssimon/eslint-config-typescript": "3.6.9",
     "@types/glob": "8.0.0",
-    "@types/node": "18.11.8",
+    "@types/node": "18.11.9",
     "commitizen": "4.2.5",
     "cz-conventional-changelog": "3.3.0",
     "eslint": "8.26.0",
