@@ -4,7 +4,7 @@
 
 > Show file sizes tabular including Gzip sizes.
 
-![Screenshot](https://github.com/jenssimon/tabular-filesize-gzip/raw/master/screenshot.png)
+![Screenshot](https://github.com/jenssimon/tabular-filesize-gzip/raw/main/screenshot.png)
 
 ## Install
 
