@@ -3868,7 +3868,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"glob@npm:^8.0.3, glob@npm:^8.1.0":
+"glob@npm:^8.1.0":
   version: 8.1.0
   resolution: "glob@npm:8.1.0"
   dependencies:
@@ -3881,7 +3881,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"glob@npm:^9.3.0, glob@npm:^9.3.1":
+"glob@npm:^9.0.0, glob@npm:^9.3.0, glob@npm:^9.3.1":
   version: 9.3.2
   resolution: "glob@npm:9.3.2"
   dependencies:
@@ -7983,7 +7983,7 @@ __metadata:
     cz-conventional-changelog: 3.3.0
     eslint: 8.36.0
     filesize: ^9.0.11
-    glob: ^8.0.3
+    glob: ^9.0.0
     gzip-size: ^6.0.0
     husky: 8.0.3
     lint-staged: 13.2.0
