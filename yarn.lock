@@ -7985,7 +7985,7 @@ __metadata:
     "@jenssimon/eslint-config-typescript": 3.6.31
     "@types/glob": 8.1.0
     "@types/node": 18.15.11
-    chalk: ^4.1.2
+    chalk: ^5.0.0
     commitizen: 4.3.0
     cz-conventional-changelog: 3.3.0
     eslint: 8.37.0
