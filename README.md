@@ -17,7 +17,7 @@ $ yarn add tabular-filesize-gzip --dev
 This generates a file size table with multiple sections and groups.
 
 ```javascript
-const tabularFilesizeGzip = require('tabular-filesize-gzip');
+const tabularFilesizeGzip = require('tabular-filesize-gzip')
 
 console.log(tabularFilesizeGzip([
   {
@@ -42,7 +42,7 @@ console.log(tabularFilesizeGzip([
       // ...
     ]
   }
-]);
+]))
 ```
 
 ## License
