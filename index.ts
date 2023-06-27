@@ -13,14 +13,14 @@ import type { Chalk } from 'chalk'
 type LineType = [string, string, string];
 
 interface FilesizeGroup {
-  title: string;
-  files: string;
-  ignore?: string[];
+  title: string
+  files: string
+  ignore?: string[]
 }
 
 interface FilesizeSection {
-  title: string;
-  groups: FilesizeGroup[];
+  title: string
+  groups: FilesizeGroup[]
 }
 
 const emptyLine: LineType = [' ', ' ', ' ']
