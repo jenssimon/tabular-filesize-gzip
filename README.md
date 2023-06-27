@@ -1,4 +1,4 @@
-[![NPM version][npm-image]][npm-url] [![Downloads][npm-downloads-image]][npm-url] [![star this repo][gh-stars-image]][gh-url] [![fork this repo][gh-forks-image]][gh-url] [![Build Status][gh-status-image]][gh-url]
+[![NPM version][npm-image]][npm-url] [![Downloads][npm-downloads-image]][npm-url] [![star this repo][gh-stars-image]][gh-url] [![fork this repo][gh-forks-image]][gh-url] [![CI][gh-status-image]][gh-status-url]
 
 # tabular-filesize-gzip
 
@@ -47,7 +47,7 @@ console.log(tabularFilesizeGzip([
 
 ## License
 
-MIT © 2022 [Jens Simon](https://github.com/jenssimon)
+MIT © 2023 [Jens Simon](https://github.com/jenssimon)
 
 [npm-url]: https://www.npmjs.com/package/tabular-filesize-gzip
 [npm-image]: https://badgen.net/npm/v/tabular-filesize-gzip
@@ -56,4 +56,5 @@ MIT © 2022 [Jens Simon](https://github.com/jenssimon)
 [gh-url]: https://github.com/jenssimon/tabular-filesize-gzip
 [gh-stars-image]: https://badgen.net/github/stars/jenssimon/tabular-filesize-gzip
 [gh-forks-image]: https://badgen.net/github/forks/jenssimon/tabular-filesize-gzip
-[gh-status-image]: https://badgen.net/github/status/jenssimon/tabular-filesize-gzip
+[gh-status-image]: https://github.com/jenssimon/tabular-filesize-gzip/actions/workflows/ci.yml/badge.svg
+[gh-status-url]: https://github.com/jenssimon/tabular-filesize-gzip/actions/workflows/ci.yml
