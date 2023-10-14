@@ -14,12 +14,9 @@
   "author": "Jens Simon <jens.simon80@googlemail.com>",
   "license": "MIT",
   "scripts": {
-    "lint": "eslint --fix ./",
+    "lint": "eslint ./",
     "build": "tsc",
     "prepare": "npm-run-all build",
-    "ci-test": "run-s \"ci-test:*\"",
-    "ci-test:lint": "eslint --ext .tsx,.ts,.jsx,.js ./",
-    "ci-test:tsc": "tsc --noEmit",
     "commit": "cz",
     "postinstall": "husky install",
     "prepack": "pinst --disable",
