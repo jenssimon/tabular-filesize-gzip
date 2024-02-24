@@ -3387,10 +3387,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"filesize@npm:^9.0.11":
-  version: 9.0.11
-  resolution: "filesize@npm:9.0.11"
-  checksum: 10c0/7a1e241b9d7eea7d7eae841144412e1c7e4b3a3ff3cd07d15e9a521087d49e93bfad712c6060387d16194195727cc71cdbfce82f20be8e67eaaec8aa76fc429a
+"filesize@npm:^10.0.0":
+  version: 10.1.0
+  resolution: "filesize@npm:10.1.0"
+  checksum: 10c0/4439d2d81ecd98503367cc6d2083ea94de0859a35953325d94f95c4a18302a333a77b80b5421bc9dc663cf9fb2fc1193f15963da4fd0dab3d49168902588a790
   languageName: node
   linkType: hard
 
@@ -7684,7 +7684,7 @@ __metadata:
     commitizen: "npm:4.3.0"
     cz-conventional-changelog: "npm:3.3.0"
     eslint: "npm:8.57.0"
-    filesize: "npm:^9.0.11"
+    filesize: "npm:^10.0.0"
     glob: "npm:^8.1.0"
     gzip-size: "npm:^6.0.0"
     husky: "npm:9.0.11"
