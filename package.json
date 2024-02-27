@@ -61,7 +61,17 @@
     ],
     "parserOptions": {
       "project": "./tsconfig.json"
-    }
+    },
+    "overrides": [
+      {
+        "files": [
+          "commitlint.config.js"
+        ],
+        "rules": {
+          "unicorn/prefer-module": "off"
+        }
+      }
+    ]
   },
   "packageManager": "yarn@4.1.0",
   "config": {
